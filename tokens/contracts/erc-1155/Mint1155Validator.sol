@@ -18,7 +18,7 @@ contract Mint1155Validator is ERC1271Validator {
 
             bytes32 hash = LibERC1155LazyMint.hashToSign(data);
             // require(ecrecover(hash, sig.v, sig.r, sig.s) == creator, "Mint1155Validator:: signer is not valid"); 
-            require(btc_ecrecover(btcu_message_hash(hash), sig.v, sig.r, sig.s) == order.maker, "Signer is not valid");   
+            require(btc_ecrecover(btcu_message_hash(hash), sig.v, sig.r, sig.s) == creator, "Signer is not valid");   
         }
     }
 
